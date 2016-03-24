@@ -1,6 +1,16 @@
-# the ps directory
-- db.txt:  passwords for awrgrpt, must be 11g database
-- inst.txt: passwords for awrrpt and addmrpt
+# Configure
+
+- db.txt:  database tnsname, dbversion > 11g
+- inst.txt: instance tnsname
+
+```sql
+-- Create a user for awr generating
+create user awruser identified by awrpass;
+grant create session to awruser;
+grant select any dictionary to awruser;
+grant execute on dbms_workload_repository to awruser;
+grant execute on dbms_advisor to awruser;
+```
 
 # How to run AWR report?
 
