@@ -6,9 +6,11 @@ SQLDIR=/root/awr/sql
 
 # date
 datenow=`date +%Y%m%d`
+USER=awruser
+PASS=awrpass
 
 # read file 
-while read DB USER PASS; 
+while read DB;
   do 
 
    AWRDIR=$AWRBASE/$DB
@@ -22,7 +24,6 @@ while read DB USER PASS;
    fi
 
    cd $DATEDIR
-   echo Processing $DB ......
-   sqlplus $USER/$PASS@$DB as sysdba @$SQLDIR/myaddmrpt
+   sqlplus $USER/$PASS@$DB @$SQLDIR/myaddmrpt
    
 done < /root/awr/ps/inst.txt

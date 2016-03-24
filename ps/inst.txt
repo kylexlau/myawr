@@ -1,1 +1,3 @@
-instname sys pass
+instname1
+instname2
+

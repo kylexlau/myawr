@@ -1,1 +1,2 @@
-dbname sys pass
+dbname1
+dbname2

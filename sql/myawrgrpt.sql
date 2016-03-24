@@ -10,7 +10,7 @@ variable dbname varchar2(20);
 -- variables definition
 begin
 select dbid into :dbid from v$database;
-select database_name into :dbname from v$database;
+select name into :dbname from v$database;
 select max(snap_id)-1 into :bid from sys.dba_hist_snapshot;
 select max(snap_id)   into :eid from sys.dba_hist_snapshot;
 end;
