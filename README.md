@@ -10,6 +10,7 @@ grant create session to awruser;
 grant select any dictionary to awruser;
 grant execute on dbms_workload_repository to awruser;
 grant execute on dbms_advisor to awruser;
+grant advisor to awruser;
 ```
 
 # How to run AWR report?
