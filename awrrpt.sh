@@ -1,15 +1,7 @@
 #!/bin/bash
 
-source /root/awr/11g
-AWRBASE=/awr
-SQLDIR=/root/awr/sql
+source /opt/myawr/config.sh
 
-# date
-datenow=`date +%Y%m%d`
-USER=awruser
-PASS=awrpass
-
-# read file 
 while read DB;
   do 
 
@@ -24,6 +16,5 @@ while read DB;
    fi
 
    cd $DATEDIR
-   sqlplus $USER/$PASS@$DB @$SQLDIR/myawrrpt
-   
-done < /root/awr/ps/inst.txt
+   sqlplus $USER/$PASS@$DB @$MYAWR/sql/myawrrpt
+done < $MYAWR/ps/inst.txt

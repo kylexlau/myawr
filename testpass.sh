@@ -1,14 +1,9 @@
 #!/bin/bash
 
-source /root/awr/11g
-AWRBASE=/awr
-SQLDIR=/root/awr/sql
-
-# date
-datenow=`date +%Y%m%d`
+source /opt/myawr/config.sh
 
 # read file 
 while read DB USER PASS; 
   do 
-   sqlplus $USER/$PASS@$DB as sysdba @/root/awr/sql/test.sql
-done < /root/awr/ps/db.txt
+   echo sqlplus $USER/$PASS@$DB as sysdba @$MYAWR/sql/test.sql
+done < $MYAWR/ps/inst.txt.bak
